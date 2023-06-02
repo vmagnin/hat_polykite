@@ -1,0 +1,27 @@
+name = "hat_polykite"
+description= "Creates a SVG file with hat polykites (aperiodic monotiles)"
+version = "1.0.0"
+license    = "GPL-3.0-or-later"
+author = "vmagnin"
+copyright = "Copyright 2023, vmagnin"
+maintainer = "https://github.com/vmagnin/hat_polykite/issues"
+homepage   = "https://github.com/vmagnin/hat_polykite"
+categories = ["SVG", "graphics"]
+keywords   = ["cairo-fortran", "Cairo", "Fortran", "fpm", "SVG", "aperiodic monotile"]
+
+[dependencies]
+cairo-fortran = {git = "https://github.com/vmagnin/cairo-fortran" }
+
+[build]
+auto-executables = true
+auto-tests = true
+auto-examples = true
+module-naming = false
+
+[install]
+library = false
+
+[fortran]
+implicit-typing = false
+implicit-external = false
+source-form = "free"
