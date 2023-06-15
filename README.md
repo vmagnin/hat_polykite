@@ -12,7 +12,7 @@ In 1966, the mathematician Robert Berger built a set of 20426 tiles which he lat
 
 On March 20, 2023, David Smith and mathematicians Joseph Samuel Myers, Craig S. Kaplan and Chaim Goodman-Strauss posted a [preprint on ArXiv](http://arxiv.org/abs/2303.10798) describing a monotile with 13 sides that, used with its reflected version, admits aperiodic tilings of the plane: the *"hat" polykite.*
 
-On May 28, 2023, they deposited a [second preprint on arXiv](https://arxiv.org/abs/2305.17743) describing aperiodic tiling of the plane using a single chiral (tiling the plane without its reflected version) fourteen-sided shape, named *Tile(1,1).* They have finally found the Grail! In fact, if you use both Tile(1,1) and its reflected shape, the tiling will be periodic. If the reflected shape is prohibited, the tiling is aperiodic. And by replacing the edges of Tile(1,1) by curves, you can obtain the Spectre which admits aperiodic tiling of the plane, but no tiling if you use it with its reflected shape.
+On May 28, 2023, they deposited a [second preprint on arXiv](https://arxiv.org/abs/2305.17743) describing aperiodic tiling of the plane using a single chiral (tiling the plane without its reflected version) fourteen-sided shape, named *Tile(1,1).* They have finally found the Grail! In fact, if you use both Tile(1,1) and its reflected shape, the tiling will be periodic. If the reflected shape is prohibited, the tiling is aperiodic. And by replacing the edges of Tile(1,1) by curves, you can obtain the Spectre which admits aperiodic tiling of the plane, but no tiling if you use it with its reflected shape. See also that page from the authors: https://cs.uwaterloo.ca/~csk/spectre/
 
 Open question: is there such shapes with fewer sides?
 
@@ -74,5 +74,6 @@ The documentation is under the [GNU Free Documentation License 1.3 or any later 
 * Hargittai, Istvan, et Balazs Hargittai. « 2020 Physics Nobel Laureate Roger Penrose and the Penrose Pattern as a Forerunner of Generalized Crystallography ». *Structural Chemistry* 32, no.1 (1st February 2021): 1‑7. https://doi.org/10.1007/s11224-020-01669-8
 * Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "An Aperiodic Monotile". 20th March 2023. http://arxiv.org/abs/2303.10798
 * Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "A chiral aperiodic monotile". 28th May 2023. https://arxiv.org/abs/2305.17743
+* https://cs.uwaterloo.ca/~csk/spectre/
 * https://en.wikipedia.org/wiki/Einstein_problem
 * https://en.wikipedia.org/wiki/Penrose_tiling
