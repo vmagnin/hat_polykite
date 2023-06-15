@@ -1,6 +1,8 @@
 # Aperiodic monotiles
 
-This project generates two SVG files including a batch of aperiodic monotiles: one with *hat polykites* and one with *Tile(1,1).* It uses the [cairo-fortran](https://github.com/vmagnin/cairo-fortran) bindings as a fpm (Fortran Package Manager) dependency. The ultimate goal will be to use laser cutting to create aperiodic puzzles.
+This project generates two SVG files including a batch of aperiodic monotiles: one with *hat polykites* and one with *Tile(1,1).* It uses the [cairo-fortran](https://github.com/vmagnin/cairo-fortran) bindings as a fpm (Fortran Package Manager) dependency.
+
+You can then cut a paper print with scissors, but cutting polygons with 13 edges is rather tedious... The ultimate goal would be to use laser cutting to create aperiodic puzzles using wood or plexiglas. But you can also simply open the SVG file into a SVG editor like [Inkscape](https://inkscape.org/) and ungroup the drawing to translate and rotate each polygon to play puzzle.
 
 ## The ein Stein problem
 
