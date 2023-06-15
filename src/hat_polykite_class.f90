@@ -75,7 +75,7 @@ contains
         integer :: i
 
         call cairo_move_to(cr, self%vertex(1)%re, self%vertex(1)%im)
-        do i = 2, 13
+        do i = 2, size(self%vertex)
             call cairo_line_to(cr, self%vertex(i)%re, self%vertex(i)%im)
         end do
         call cairo_close_path(cr)
@@ -87,7 +87,7 @@ contains
         class(Hat_polykite), intent(in) :: self
         integer :: i
 
-        print *, "Hat vertices:"
+        print *, "Polygon with ", size(self%vertex), " vertices:"
         print *, self%vertex
     end subroutine
 

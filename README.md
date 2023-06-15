@@ -1,6 +1,6 @@
-# The hat polykite
+# Aperiodic monotiles
 
-This project generates a SVG file including a batch of *hat polykites,* using the [cairo-fortran](https://github.com/vmagnin/cairo-fortran) bindings as a fpm (Fortran Package Manager) dependency. The ultimate goal will be to use laser cutting to create an aperiodic puzzle.
+This project generates two SVG files including a batch of aperiodic monotiles: one with *hat polykites* and one with *Tile(1,1).* It uses the [cairo-fortran](https://github.com/vmagnin/cairo-fortran) bindings as a fpm (Fortran Package Manager) dependency. The ultimate goal will be to use laser cutting to create aperiodic puzzles.
 
 ## The ein Stein problem
 
@@ -10,11 +10,17 @@ In 1966, the mathematician Robert Berger built a set of 20426 tiles which he lat
 
 On March 20, 2023, David Smith and mathematicians Joseph Samuel Myers, Craig S. Kaplan and Chaim Goodman-Strauss posted a [preprint on ArXiv](http://arxiv.org/abs/2303.10798) describing a monotile with 13 sides that, used with its reflected version, admits aperiodic tilings of the plane: the *"hat" polykite.*
 
-Open questions: is there such a shape with fewer than 13 sides? Is there a non-returnable monotile that admits aperiodic tilings?
+On May 28, 2023, they deposited a [second preprint on arXiv](https://arxiv.org/abs/2305.17743) describing aperiodic tiling of the plane using a single chiral (tiling the plane without its reflected version) fourteen-sided shape, named *Tile(1,1).* They have finally found the Grail! In fact, if you use both Tile(1,1) and its reflected shape, the tiling will be periodic. If the reflected shape is prohibited, the tiling is aperiodic. And by replacing the edges of Tile(1,1) by curves, you can obtain the Spectre which admits aperiodic tiling of the plane, but no tiling if you use it with its reflected shape.
+
+Open question: is there such shapes with fewer sides?
 
 ## Building the hat using three hexagons
 
 ![hat_polikite_building](pictures/building_the_hat_polykite.svg)
+
+## Building the Tile(1,1)
+
+All the 14 edges have the same length (but in fact one of them is divided in two segments). All the angles are multiples of 30°.
 
 ## Requirements and dependencies
 
@@ -64,6 +70,7 @@ The documentation is under the [GNU Free Documentation License 1.3 or any later 
 ## Bibliography
 
 * Hargittai, Istvan, et Balazs Hargittai. « 2020 Physics Nobel Laureate Roger Penrose and the Penrose Pattern as a Forerunner of Generalized Crystallography ». *Structural Chemistry* 32, no.1 (1st February 2021): 1‑7. https://doi.org/10.1007/s11224-020-01669-8
-* Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. 2023. "An Aperiodic Monotile". http://arxiv.org/abs/2303.10798.
+* Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "An Aperiodic Monotile". 20th March 2023. http://arxiv.org/abs/2303.10798
+* Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "A chiral aperiodic monotile". 28th May 2023. https://arxiv.org/abs/2305.17743
 * https://en.wikipedia.org/wiki/Einstein_problem
 * https://en.wikipedia.org/wiki/Penrose_tiling
