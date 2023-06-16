@@ -22,7 +22,10 @@ Open question: is there such shapes with fewer sides?
 
 ## Building the Tile(1,1)
 
-All the 14 edges have the same length (but in fact one of them is divided in two segments). All the angles are multiples of 30°.
+It is derived from the hat, but all the 14 edges have the same length (but in fact one of them is divided in two segments). All the angles are multiples of 30°.
+
+![tile1_1](pictures/tile1_1.svg)
+
 
 ## Requirements and dependencies
 
