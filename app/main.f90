@@ -16,7 +16,7 @@
 ! If not, see <http://www.gnu.org/licenses/>.
 !------------------------------------------------------------------------------
 ! Contributed by Vincent Magnin, 2023-06-01
-! Last modifications: 2023-06-15
+! Last modifications: 2023-06-20
 !------------------------------------------------------------------------------
 
 program main
@@ -25,8 +25,7 @@ program main
     use cairo
     use cairo_enums
     ! Our objects:
-    use hat_polykite_class
-    use tile1_1_class
+    use tile_class
 
     implicit none
     ! Cairo surface and Cairo context:
@@ -36,8 +35,6 @@ program main
     ! Size of the surface in mm (A4 paper):
     real(dp), parameter :: IMAGE_WIDTH  = 210._dp
     real(dp), parameter :: IMAGE_HEIGHT = 297._dp
-    type(Hat_polykite)  :: hat
-    type(Tile1_1) :: tile11
     ! Hexagon side length in mm:
     real(dp), parameter :: HX_SIDE = 20._dp
     integer  :: i, j
@@ -63,8 +60,11 @@ program main
     do j = 1, 3
         y = 20._dp  ! mm top margin
         do i = 1, 7
-            call hat%set(start=cmplx(x+10._dp, y, dp), hx_side=HX_SIDE)
-            call hat%draw(cr)
+            block
+                type(Hat_polykite) :: hat
+                call hat%set(start=cmplx(x+10._dp, y, dp), hx_side=HX_SIDE)
+                call hat%draw(cr)
+            end block
             y = y + sqrt(3._dp) * HX_SIDE
         end do
         x = x + 3 * HX_SIDE
@@ -90,13 +90,17 @@ program main
     call cairo_set_line_width(cr, 1._dp)
     ! Draw in red:
     call cairo_set_source_rgb(cr, 1._dp, 0._dp, 0._dp)
+
     ! Create and draw several columns of Tile(1,1):
      x = 20._dp  ! mm left margin
      do j = 1, 3
          y = 20._dp  ! mm top margin
          do i = 1, 7
-            call tile11%set(start=cmplx(x+10._dp, y, dp), side_length=20._dp)
-            call tile11%draw(cr)
+            block
+                type(Tile1_1) :: tile11
+                call tile11%set(start=cmplx(x+10._dp, y, dp), side_length=20._dp)
+                call tile11%draw(cr)
+            end block
             y = y + 4 * 20._dp
          end do
          x = x + 5 * 20._dp

@@ -49,12 +49,12 @@ Unpacking objects: 100% (23/23), 82.93 KiB | 3.61 MiB/s, done.
 From https://github.com/vmagnin/cairo-fortran
  * branch            HEAD       -> FETCH_HEAD
 hexagon_class.f90                      done.
-cairo-enums.f90                        done.
 cairo-auto.f90                         done.
-hat_polykite_class.f90                 done.
+cairo-enums.f90                        done.
+tile_class.f90                         done.
 libhat_polykite.a                      done.
 main.f90                               done.
-hat_polykite                           done.
+hat_polykite                           done
 [100%] Project compiled successfully.
  -----------------------------
  Output file: hat_polykite.svg

@@ -7,6 +7,9 @@ All notable changes to the gtk-fortran project are documented in this file. The 
 ### Added
 * `pictures/tile1_1.svg`: it appears in the `README.md` file.
 
+### Changed
+* Replaced `src/hat_polykite_class.f90` and `src/tile1_1_class.f90` by the abstract class `src/tile_class.f90`, extended in two classes `Hat_polykite` and `Tile1_1`.
+
 
 ## [hat_polykite 2.0] 2023-06-15
 

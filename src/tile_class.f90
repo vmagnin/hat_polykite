@@ -15,26 +15,82 @@
 ! this program; see the files LICENSE and LICENSE_EXCEPTION respectively.
 ! If not, see <http://www.gnu.org/licenses/>.
 !------------------------------------------------------------------------------
-! Contributed by Vincent Magnin, 2023-06-12
-! Last modifications: 2023-06-12
+! Contributed by Vincent Magnin, 2023-06-01
+! Last modifications: 2023-06-20
 !------------------------------------------------------------------------------
 
-module tile1_1_class
+module tile_class
     use, intrinsic :: iso_c_binding, only: dp=>c_double, c_ptr
+    use hexagon_class, only: Hexagon
 
     implicit none
 
-    type :: Tile1_1
-        complex(dp), private :: vertex(14)
+    private
+    public :: Hat_polykite, Tile1_1
+
+    type, abstract :: Polygon
+        complex(dp), allocatable :: vertex(:)
     contains
-        procedure :: set
-        procedure :: draw
-        procedure :: print
-    end type Tile1_1
+        procedure, pass(self) :: draw => polygon_draw
+        procedure, pass(self) :: print => polygon_print
+    end type Polygon
+
+    type, extends(Polygon) :: Hat_polykite
+    contains
+        procedure, pass(self) :: set => Hat_polykite_set
+        final :: Hat_polykite_clear
+    end type
+
+    type, extends(Polygon) :: Tile1_1
+    contains
+        procedure, pass(self) :: set => Tile1_1_set
+        final :: Tile1_1_clear
+    end type
 
 contains
 
-    subroutine set(self, start, side_length)
+    subroutine Hat_polykite_set(self, start, hx_side)
+        class(Hat_polykite), intent(inout) :: self
+        ! Top left vertex of the hat (our starting point):
+        complex(dp), intent(in) :: start
+        ! Side length of the hexagons used to define the polykite:
+        real(dp), intent(in)    :: hx_side
+        ! Three adjacent hexagons are needed:
+        type(Hexagon) :: hx1, hx2, hx3
+
+        ! Left hexagon (the hat starts at its top apothem):
+        call hx1%set(start + cmplx(-hx_side / 2 , 0._dp, dp), hx_side)
+        ! Bottom right hexagon:
+        call hx2%set(hx1%vertex(5), hx_side)
+        ! Upper right hexagon:
+        call hx3%set(hx2%vertex(1) + cmplx(0._dp, -hx_side * sqrt(3._dp), dp), hx_side)
+
+        ! The 13 vertices of the hat polykite:
+        allocate(self%vertex(13))
+        self%vertex(1)  = hx1%apothem(1)
+        self%vertex(2)  = hx1%center
+        self%vertex(3)  = hx1%apothem(3)
+        self%vertex(4)  = hx1%vertex(3)
+        self%vertex(5)  = hx1%vertex(4)
+        self%vertex(6)  = hx1%apothem(5)
+        self%vertex(7)  = hx2%center
+        self%vertex(8)  = hx2%apothem(6)
+        self%vertex(9)  = hx2%vertex(6)
+        self%vertex(10) = hx2%apothem(1)
+        self%vertex(11) = hx3%center
+        self%vertex(12) = hx3%apothem(2)
+        self%vertex(13) = hx3%vertex(2)
+    end subroutine Hat_polykite_set
+
+
+    subroutine Hat_polykite_clear(self)
+        type(Hat_polykite) :: self
+
+        if(allocated(self%vertex)) deallocate(self%vertex)
+    end subroutine
+
+
+    subroutine Tile1_1_set(self, start, side_length)
         class(Tile1_1), intent(inout) :: self
         ! Top left vertex of the hat (our starting point):
         complex(dp), intent(in) :: start
@@ -57,6 +113,7 @@ contains
         ! The rotation angles are relative to the horizontal.
         ! Multiplications are for counter clockwise rotations,
         ! divisions are for clockwise rotations.
+        allocate(self%vertex(14))
         self%vertex(1)  = start
         self%vertex(2)  = self%vertex(1)  + VERTICAL
         self%vertex(3)  = self%vertex(2)  + VERTICAL / ROTATE60
@@ -71,11 +128,19 @@ contains
         self%vertex(12) = self%vertex(11) - VERTICAL
         self%vertex(13) = self%vertex(12) - VERTICAL * ROTATE60
         self%vertex(14) = self%vertex(13) - HORIZONTAL * ROTATE60
-    end subroutine set
+    end subroutine Tile1_1_set
 
-    subroutine draw(self, cr)
+
+    subroutine Tile1_1_clear(self)
+        type(Tile1_1) :: self
+
+        if(allocated(self%vertex)) deallocate(self%vertex)
+    end subroutine
+
+
+    subroutine polygon_draw(self, cr)
         use cairo
-        class(Tile1_1), intent(in) :: self
+        class(Polygon), intent(in) :: self
         ! Cairo context :
         type(c_ptr), intent(in) :: cr
         integer :: i
@@ -86,15 +151,16 @@ contains
         end do
         call cairo_close_path(cr)
         call cairo_stroke(cr)
-    end subroutine draw
+    end subroutine
+
 
     ! Useful for testing and debugging:
-    subroutine print(self)
-        class(Tile1_1), intent(in) :: self
+    subroutine polygon_print(self)
+        class(Polygon), intent(in) :: self
         integer :: i
 
         print *, "Polygon with ", size(self%vertex), " vertices:"
         print *, self%vertex
     end subroutine
 
-end module tile1_1_class
+end module tile_class
