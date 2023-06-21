@@ -16,7 +16,7 @@
 ! If not, see <http://www.gnu.org/licenses/>.
 !------------------------------------------------------------------------------
 ! Contributed by Vincent Magnin, 2023-06-01
-! Last modifications: 2023-06-20
+! Last modifications: 2023-06-21
 !------------------------------------------------------------------------------
 
 module tile_class
@@ -31,19 +31,19 @@ module tile_class
     type, abstract :: Polygon
         complex(dp), allocatable :: vertex(:)
     contains
-        procedure, pass(self) :: draw => polygon_draw
-        procedure, pass(self) :: print => polygon_print
+        procedure :: draw => polygon_draw
+        procedure :: print => polygon_print
     end type Polygon
 
     type, extends(Polygon) :: Hat_polykite
     contains
-        procedure, pass(self) :: set => Hat_polykite_set
+        procedure :: set => Hat_polykite_set
         final :: Hat_polykite_clear
     end type
 
     type, extends(Polygon) :: Tile1_1
     contains
-        procedure, pass(self) :: set => Tile1_1_set
+        procedure :: set => Tile1_1_set
         final :: Tile1_1_clear
     end type
 
