@@ -16,7 +16,7 @@
 ! If not, see <http://www.gnu.org/licenses/>.
 !------------------------------------------------------------------------------
 ! Contributed by Vincent Magnin, 2023-06-01
-! Last modifications: 2023-06-20
+! Last modifications: 2023-06-21
 !------------------------------------------------------------------------------
 
 program main
@@ -30,7 +30,7 @@ program main
     implicit none
     ! Cairo surface and Cairo context:
     type(c_ptr) :: surface, cr
-    character(*), parameter :: FILENAME = "hat_polykite.svg"
+    character(*), parameter :: FILENAME_HAT = "hat_polykite.svg"
     character(*), parameter :: FILENAME_TILE1_1 = "tile1_1.svg"
     ! Size of the surface in mm (A4 paper):
     real(dp), parameter :: IMAGE_WIDTH  = 210._dp
@@ -44,7 +44,7 @@ program main
     ! The hat polykite
     ! ***********************
     ! The object will be rendered in a SVG file:
-    surface = cairo_svg_surface_create(FILENAME//c_null_char, &
+    surface = cairo_svg_surface_create(FILENAME_HAT//c_null_char, &
                                       & IMAGE_WIDTH, IMAGE_HEIGHT)
     call cairo_svg_surface_set_document_unit(surface, CAIRO_SVG_UNIT_MM)
     cr = cairo_create(surface)
@@ -74,7 +74,7 @@ program main
     call cairo_destroy(cr)
     call cairo_surface_destroy(surface)
     print *, "-----------------------------"
-    print *, "Output file: ", FILENAME
+    print *, "Output file: ", FILENAME_HAT
 
     ! ***********************
     ! The Tile(1,1)
