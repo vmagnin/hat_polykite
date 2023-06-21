@@ -52,8 +52,8 @@ program main
     ! Initialize parameters:
     call cairo_set_antialias(cr, CAIRO_ANTIALIAS_BEST)
     call cairo_set_line_width(cr, 1._dp)
-    ! Draw in red:
-    call cairo_set_source_rgb(cr, 1._dp, 0._dp, 0._dp)
+    ! Draw in blue:
+    call cairo_set_source_rgb(cr, 0._dp, 0._dp, 1._dp)
 
     ! Create and draw several columns of hat polykites:
     x = 20._dp  ! mm left margin
@@ -88,8 +88,8 @@ program main
     ! Initialize parameters:
     call cairo_set_antialias(cr, CAIRO_ANTIALIAS_BEST)
     call cairo_set_line_width(cr, 1._dp)
-    ! Draw in red:
-    call cairo_set_source_rgb(cr, 1._dp, 0._dp, 0._dp)
+    ! Draw in blue:
+    call cairo_set_source_rgb(cr, 0._dp, 0._dp, 1._dp)
 
     ! Create and draw several columns of Tile(1,1):
      x = 20._dp  ! mm left margin
