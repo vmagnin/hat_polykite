@@ -99,8 +99,6 @@ contains
         ! The y axis going downward in Cairo, the +rotation must be inverted:
         ! 60° rotation:
         complex(dp), parameter :: ROTATE60  = cmplx(0.5_dp, -sqrt(3._dp) / 2, dp)
-        ! 90° rotation:
-        complex(dp), parameter :: ROTATE90  = cmplx(0._dp, -1._dp, dp)
         ! 120° rotation:
         complex(dp), parameter :: ROTATE120 = cmplx(-0.5_dp, -sqrt(3._dp) / 2, dp)
         ! Translations:
@@ -157,7 +155,6 @@ contains
     ! Useful for testing and debugging:
     subroutine polygon_print(self)
         class(Polygon), intent(in) :: self
-        integer :: i
 
         print *, "Polygon with ", size(self%vertex), " vertices:"
         print *, self%vertex
