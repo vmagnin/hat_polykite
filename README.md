@@ -74,6 +74,7 @@ The documentation is under the [GNU Free Documentation License 1.3 or any later 
 
 ## Bibliography
 
+* Roger Penrose, Set of tiles for covering a surface, Patent GB1548164A ([US-4133152-A](https://patents.google.com/patent/US4133152A/en)), filed 1975-06-25.
 * Hargittai, Istvan, et Balazs Hargittai. « 2020 Physics Nobel Laureate Roger Penrose and the Penrose Pattern as a Forerunner of Generalized Crystallography ». *Structural Chemistry* 32, no.1 (1st February 2021): 1‑7. https://doi.org/10.1007/s11224-020-01669-8
 * Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "An Aperiodic Monotile". 20th March 2023. http://arxiv.org/abs/2303.10798
 * Smith, David, Joseph Samuel Myers, Craig S. Kaplan, and Chaim Goodman-Strauss. "A chiral aperiodic monotile". 28th May 2023. https://arxiv.org/abs/2305.17743
