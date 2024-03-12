@@ -97,7 +97,7 @@ program main
                 call tile11%set(start=cmplx(x+10._dp, y, dp), side_length=20._dp)
                 call tile11%draw(cr)
             end block
-            y = y + 4 * 20._dp
+            y = y + 3.5_dp * 20._dp
          end do
          x = x + 5 * 20._dp
      end do
