@@ -24,7 +24,7 @@ Open question: is there such shapes with fewer sides?
 
 It is derived from the hat, but all the 14 edges have the same length (but in fact one of them is divided in two segments). All the angles are multiples of 30°.
 
-![tile1_1](pictures/tile1_1.svg)
+![tile1_1](pictures/one_tile1_1.svg)
 
 
 ## Requirements and dependencies
