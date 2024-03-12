@@ -5,10 +5,11 @@ All notable changes to the gtk-fortran project are documented in this file. The 
 ## [hat_polykite 2.1] 2024-03-12
 
 ### Added
-* `pictures/tile1_1.svg`: it appears in the `README.md` file.
+* `pictures/one_tile1_1.svg`: it appears in the `README.md` file.
 * A red circle at the barycenter of each polygon to mark the front face.
 
 ### Changed
+* Copied the resulting `.svg` files in the `pictures/` directory.
 * Replaced `src/hat_polykite_class.f90` and `src/tile1_1_class.f90` by the abstract class `src/tile_class.f90`, extended in two classes `Hat_polykite` and `Tile1_1`.
 
 

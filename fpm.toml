@@ -1,9 +1,9 @@
 name = "hat_polykite"
 description= "Creates SVG files with aperiodic monotiles"
-version = "2.0.0"
+version = "2.1.0"
 license    = "GPL-3.0-or-later"
 author = "vmagnin"
-copyright = "Copyright 2023, vmagnin"
+copyright = "Copyright 2023-2024, vmagnin"
 maintainer = "https://github.com/vmagnin/hat_polykite/issues"
 homepage   = "https://github.com/vmagnin/hat_polykite"
 categories = ["SVG", "graphics"]
