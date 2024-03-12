@@ -16,7 +16,7 @@
 ! If not, see <http://www.gnu.org/licenses/>.
 !------------------------------------------------------------------------------
 ! Contributed by Vincent Magnin, 2023-06-01
-! Last modifications: 2023-06-21
+! Last modifications: 2024-03-12
 !------------------------------------------------------------------------------
 
 module tile_class
@@ -84,6 +84,7 @@ contains
 
 
     subroutine Hat_polykite_clear(self)
+
         type(Hat_polykite) :: self
 
         if(allocated(self%vertex)) deallocate(self%vertex)
@@ -142,12 +143,25 @@ contains
         ! Cairo context :
         type(c_ptr), intent(in) :: cr
         integer :: i
+        real(dp), parameter :: pi = acos(-1._dp)
+        real(dp)    :: radius
+        complex(dp) :: barycenter
+
+        ! Draw the polygone in blue:
+        call cairo_set_source_rgb(cr, 0._dp, 0._dp, 1._dp)
 
         call cairo_move_to(cr, self%vertex(1)%re, self%vertex(1)%im)
         do i = 2, size(self%vertex)
             call cairo_line_to(cr, self%vertex(i)%re, self%vertex(i)%im)
         end do
         call cairo_close_path(cr)
+        call cairo_stroke(cr)
+
+        ! Add a red circle in the middle to mark the front face:
+        barycenter = sum(self%vertex(:)) / size(self%vertex(:))
+        radius = abs(self%vertex(2) - self%vertex(1)) / 5._dp
+        call cairo_set_source_rgb(cr, 1._dp, 0._dp, 0._dp)
+        call cairo_arc(cr, barycenter%re, barycenter%im, radius, 0._dp, 2*pi)
         call cairo_stroke(cr)
     end subroutine
 
