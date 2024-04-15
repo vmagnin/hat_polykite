@@ -2,7 +2,9 @@
 
 This project generates two SVG files including a batch of aperiodic monotiles: one with *hat polykites* and one with *Tile(1,1).* It uses the [cairo-fortran](https://github.com/vmagnin/cairo-fortran) bindings as a fpm (Fortran Package Manager) dependency.
 
-You can then cut a paper print with scissors, but cutting polygons with 13 edges is rather tedious... The ultimate goal would be to use laser cutting to create aperiodic puzzles using wood or plexiglas. But you can also simply open the SVG file into a SVG editor like [Inkscape](https://inkscape.org/) and ungroup the drawing to translate and rotate each polygon to play puzzle.
+The tiles were cut using a laser cutting machine Trotec Speedy 400 in poplar plywood (3 and 5 mm thick). In the SVG files, the colours for drawing and external cutting are respectively red and blue. You can see the result in the `pictures/` directory.
+
+You can also cut a paper print with scissors, but cutting polygons with 13 edges is rather tedious... Or you can also simply open the SVG file into a SVG editor like [Inkscape](https://inkscape.org/) and ungroup the drawing to translate and rotate each polygon to play puzzle.
 
 ## The ein Stein problem
 
@@ -71,6 +73,10 @@ The documentation is under the [GNU Free Documentation License 1.3 or any later 
 
 * https://cairographics.org/documentation/
 * API Reference Manual: https://cairographics.org/manual/
+
+## Laser cutting
+* https://en.wikipedia.org/wiki/Laser_cutting
+* Trotec Speedy 400: https://www.troteclaser.com/en/laser-machines/laser-engravers-speedy-series
 
 ## Bibliography
 

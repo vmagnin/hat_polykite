@@ -2,6 +2,12 @@
 All notable changes to the gtk-fortran project are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 
+## [hat_polykite 2.2] 2024-04-15
+
+### Added
+- Four photos in `pictures/`: `a_circle_of_tile1_1.jpg`, `another_circle_of_tile1_1.jpg`, `hat_and_hexagonal_holes.jpg`, `The ein Stein stand - 2024-04-12.jpg`
+
+
 ## [hat_polykite 2.1] 2024-03-12
 
 ### Added
